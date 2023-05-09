@@ -13,8 +13,8 @@ datasets:
     sigma_type: random
     sigma_range: [0, 125]
     in_ch: 1    ## Grayscale image
-    dataroot_gt: /home/oraclemiso/Restormer/Medical_Data/Trainset/Target
-    dataroot_lq: /home/oraclemiso/Restormer/Medical_Data/Trainset/Input
+    dataroot_gt: /content/drive/MyDrive/Medical_dataset_Splited/Trainset/Target
+    dataroot_lq: /content/drive/MyDrive/Medical_dataset_Splited/Trainset/Input
     geometric_augs: true
 
     filename_tmpl: '{}'
@@ -37,7 +37,7 @@ datasets:
     mini_batch_sizes: [1]   
     iters: [30000, 60000]
     gt_size: 256
-    gt_sizes: [64, 128]
+    gt_sizes: [128]
     ### ------------------------------------------------------------
 
     dataset_enlarge_ratio: 1
@@ -48,8 +48,8 @@ datasets:
     type: Dataset_Medical_Paired_GaussianDenoising
     sigma_test: 25
     in_ch: 1  ## Grayscale image
-    dataroot_gt: /home/oraclemiso/Restormer/Medical_Data/Valset/Target
-    dataroot_lq: /home/oraclemiso/Restormer/Medical_Data/Valset/Input
+    dataroot_gt: /content/drive/MyDrive/Medical_dataset_Splited/Valset/Target
+    dataroot_lq: /content/drive/MyDrive/Medical_dataset_Splited/Valset/Input
 
 # network structures
 network_g:
@@ -108,7 +108,7 @@ train:
 val:
   window_size: 8
   val_freq: !!float 2e3
-  save_img: false
+  save_img: true
   rgb2bgr: true
   use_image: false
   max_minibatch: 8
